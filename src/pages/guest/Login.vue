@@ -9,13 +9,13 @@
                           <div class="col-md-5">
                             <div class="row">
                                 <div class="col-md-10 offset-1">
-                                    <q-img src="../../statics/123.png"></q-img>
+                                    <q-img src="../../statics/a.jpg"></q-img>
                                 </div>
                             </div>
                           </div>
                           <div class="col md-5">
                             <q-card-section>
-                              <div class="text-h5">Welcome to YollandhaViu Movie App</div>
+                              <div class="text-h5">Welcome to Movie App</div>
                               <div>Login Akun Anda</div>
                             </q-card-section>
                               <q-form @submit="login">

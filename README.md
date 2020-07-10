@@ -1,6 +1,4 @@
-# Quasar App (movieapp)
-
-sebuah aplikasi penjualan dvd
+# Quasar App (movieappdestri)
 
 ## Install the dependencies
 ```bash

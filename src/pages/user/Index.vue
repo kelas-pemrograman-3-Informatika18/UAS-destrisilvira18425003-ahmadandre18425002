@@ -10,10 +10,10 @@
       infinite
       swipeable
     >
-      <q-carousel-slide :name="1" img-src="https://id-articles.vuclip.com/wp-content/uploads/2020/03/nonton-streaming-download-the-world-of-the-married-sub-indo-a-world-of-married-couple-sub-indo-viu.jpg" />
-      <q-carousel-slide :name="2" img-src="https://content.shopback.com/id/wp-content/uploads/2020/03/19112107/drama-korea-terbaik-sepanjang-masa.jpg" />
-      <q-carousel-slide :name="3" img-src="https://teenage.com.sg/wp-content/uploads/2018/01/Viu-Free-Korean-Dramas-2018.jpg" />
-      <q-carousel-slide :name="4" img-src="https://cdn2.tstatic.net/jogja/foto/bank/images/drama-korea-drakor-terbaru-2020-romantic-doctor-teacher-kim-2-memulai-dengan-rating-tinggi.jpg" />
+      <q-carousel-slide :name="1" img-src="https://cdn2.tstatic.net/batam/foto/bank/images/drama-korea-whats-wrong-with-secretary-kim-episode-kedua.jpg" />
+      <q-carousel-slide :name="2" img-src="https://i2.wp.com/www.kordanews.com/wp-content/uploads/2020/02/Itaewon-Class.jpg?fit=860%2C532&ssl=1" />
+      <q-carousel-slide :name="3" img-src="https://4.bp.blogspot.com/-UK64AG5vT-w/WILw1VqCgBI/AAAAAAAAEns/RXivUfG3zwYoDEGI-OOF2dvpu_l0gEuMQCK4B/w250-h170-c/Sinopsis%2BDrama%2BThe%2BShining%2BEun%2BSoo%2B1.PNG" />
+      <q-carousel-slide :name="4" img-src="https://media.suara.com/pictures/970x544/2020/05/20/89834-the-king-eternal-monarch.jpg" />
     </q-carousel>
     </div>
     <div class="row q-col-gutter-md">
