@@ -24,8 +24,14 @@
     >
         <template v-slot:body="props">
           <q-tr :props="props">
-            <q-td key="judulFilm" :props="props">
-              {{ props.row.dataMovie[0].judulFilm }}
+            <q-td key="namaLengkap" :props="props">
+              {{ props.row.dataUser[0].namaLengkap }}
+            </q-td>
+            <q-td key="email" :props="props">
+              {{ props.row.dataUser[0].email }}
+            </q-td>
+            <q-td key="tiketPesawat" :props="props">
+              {{ props.row.dataMovie[0].tiketPesawat }}
             </q-td>
             <q-td key="harga" :props="props">
               {{ props.row.harga }}
@@ -36,8 +42,11 @@
             <q-td key="total" :props="props">
               {{ props.row.total }}
             </q-td>
-            <q-td key="nama" :props="props">
-              {{ props.row.dataUser[0].namaLengkap }}
+            <q-td key="tanggalBerangkat" :props="props">
+              {{ props.row.dataMovie[0].tanggal}}
+            </q-td>
+            <q-td key="tujuan" :props="props">
+              {{ props.row.dataMovie[0].tujuan }}
             </q-td>
             <q-td key="status" :props="props">
               <q-badge v-if="props.row.status === 1" color="orange" class="q-pa-sm">
@@ -72,7 +81,7 @@
             <div class="col">
               <div class="text-caption">
                 <div>
-                  Nama Pembeli
+                  Nama Pemesan
                 </div>
                 <div class="text-weight-bold">
                 {{ activeData.dataUser[0].namaLengkap }}
@@ -82,10 +91,10 @@
             <div class="col">
               <div class="text-caption">
                 <div>
-                  Judul Movie
+                  tiket Pesawat
                 </div>
                 <div class="text-weight-bold">
-                {{ activeData.dataMovie[0].judulFilm }}
+                {{ activeData.dataMovie[0].tiketPesawat }}
                 </div>
               </div>
             </div>
@@ -139,11 +148,14 @@ export default {
   data () {
     return {
       columns: [
-        { name: 'judulFilm', align: 'center', label: 'Judul Film', field: 'judulFilm', sortable: true },
+        { name: 'namaLengkap', align: 'center', label: 'Nama Lengkap', field: 'namaLengkap', sortable: true },
+        { name: 'email', align: 'center', label: 'E-mail', field: 'email', sortable: true },
+        { name: 'tiketPesawat', align: 'center', label: 'Tiket Pesawat', field: 'tiketPesawat', sortable: true },
         { name: 'harga', align: 'center', label: 'Harga', field: 'harga', sortable: true },
-        { name: 'jumlah', align: 'center', label: 'Jumlah Beli', field: 'jumlah', sortable: true },
-        { name: 'total', align: 'center', label: 'Total ', field: 'total', sortable: true },
-        { name: 'nama', align: 'center', label: 'Nama Pembeli', field: 'nama', sortable: true },
+        { name: 'jumlah', align: 'center', label: 'Jumlah', field: 'jumlah', sortable: true },
+        { name: 'total', align: 'center', label: 'Total', field: 'total', sortable: true },
+        { name: 'tanggalBerangkat', align: 'center', label: 'Tanggal Berangkat', field: 'tanggalBerangkat', sortable: true },
+        { name: 'tujuan', align: 'center', label: 'Tujuan', field: 'tujuan', sortable: true },
         { name: 'status', align: 'center', label: 'Status', field: 'status', sortable: true },
         { name: 'aksi', align: 'center', label: 'Aksi', field: 'aksi' }
       ],
@@ -160,6 +172,7 @@ export default {
       this.$axios.get('order/getallorder')
         .then((res) => {
           if (res.data.sukses) {
+            console.log(res)
             this.data = res.data.data
           }
         })

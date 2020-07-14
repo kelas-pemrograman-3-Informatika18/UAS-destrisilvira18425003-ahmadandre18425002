@@ -8,8 +8,8 @@
           </div>
           <div class="col">
             <q-banner inline-actions class="text-light-green">
-              <div class="text-h6">Data DVD</div>
-              <div >Data Katalog DVD</div>
+              <div class="text-h6">Data Tiket Pesawat</div>
+              <div >Data Tiket Pesawat</div>
             </q-banner>
           </div>
         </div>
@@ -24,17 +24,17 @@
     >
         <template v-slot:body="props">
           <q-tr :props="props">
-            <q-td key="judulFilm" :props="props">
-              {{ props.row.judulFilm }}
+            <q-td key="tiketPesawat" :props="props">
+              {{ props.row.tiketPesawat }}
             </q-td>
             <q-td key="harga" :props="props">
               {{ props.row.harga }}
             </q-td>
-            <q-td key="tahun" :props="props">
-              {{ props.row.tahun }}
+            <q-td key="tanggal" :props="props">
+              {{ props.row.tanggal }}
             </q-td>
-            <q-td key="genre" :props="props">
-              {{ props.row.genre }}
+            <q-td key="tujuan" :props="props">
+              {{ props.row.tujuan }}
             </q-td>
             <q-td key="deskripsi" :props="props">
               <div class="ellipsis" style="max-width: 100px;">
@@ -49,7 +49,7 @@
             </q-td>
              <q-td key="aksi" :props="props">
                 <div class="row q-gutter-md">
-                    <q-btn :to="{ name: 'formEditDVD', params: { id: props.row._id }}" label="Edit" icon="edit" color="warning"/>
+                    <q-btn :to="{ name: 'formEdit', params: { id: props.row._id }}" label="Edit" icon="edit" color="warning"/>
                     <q-btn @click="deleteMovie(props.row._id)" label="Hapus" icon="delete" color="red"/>
                 </div>
             </q-td>
@@ -67,10 +67,10 @@ export default {
   data () {
     return {
       columns: [
-        { name: 'judulFilm', align: 'left', label: 'Judul Film', field: 'judulFilm', sortable: true },
+        { name: 'tiketPesawat', align: 'left', label: 'Tiket Pesawat', field: 'tiketPesawat', sortable: true },
         { name: 'harga', align: 'left', label: 'Harga', field: 'harga', sortable: true },
-        { name: 'tahun', align: 'left', label: 'Tahun Film', field: 'tahun', sortable: true },
-        { name: 'genre', align: 'left', label: 'Genre', field: 'genre', sortable: true },
+        { name: 'tanggal', align: 'left', label: 'tanggal Berangkat', field: 'tanggal', sortable: true },
+        { name: 'tujuan', align: 'left', label: 'Tujuan', field: 'tujuan', sortable: true },
         { name: 'deskripsi', align: 'left', label: 'Deskripsi', field: 'deskripsi', sortable: true },
         { name: 'image', align: 'left', label: 'Gambar', field: 'image' },
         { name: 'aksi', align: 'left', label: 'Aksi', field: 'aksi' }

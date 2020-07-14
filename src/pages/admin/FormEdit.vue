@@ -9,7 +9,7 @@
           <div class="col">
             <q-banner inline-actions class="text-light-green">
               <div class="text-h6">Edit</div>
-              <div >Input Data DVD</div>
+              <div >Input Tiket Pesawat</div>
             </q-banner>
           </div>
         </div>
@@ -24,10 +24,10 @@
             >
             <q-input
                 filled
-                v-model="form.judulFilm"
-                label="Judul Film"
+                v-model="form.tiketPesawat"
+                label="Tiket Pesawat"
                 lazy-rules
-                :rules="[ val => val && val.length > 0 || 'Masukkan Judul Film']"
+                :rules="[ val => val && val.length > 0 || 'Masukkan Tiket Pesawat']"
             />
 
              <q-input
@@ -40,29 +40,22 @@
 
             <q-input
               filled
-              v-model="form.tahun"
-              label="Tahun Film"
+              v-model="form.tanggal"
+              label="Tanggal Berangkat"
               lazy-rules
-              :rules="[ val => val && val.length > 0 || 'Masukkan Tahun']"
+              :rules="[ val => val && val.length > 0 || 'Masukkan Tanggal']"
             />
 
             <q-select
               filled
-              v-model="form.genre"
-              :options="optionGenre"
-              label="Pilih Genre"
-              :rules="[ val => val && val.length > 0 || 'Pilihlah Genre']"
+              v-model="form.tujuan"
+              :options="optiontujuan"
+              label="Pilih Tujuan"
+              :rules="[ val => val && val.length > 0 || 'Pilihlah Tujuan']"
             />
 
             <div class="flex">
               Pilih Rating
-              <q-rating
-              class="q-ml-md"
-              v-model="form.rating"
-              size="2em"
-              :max="5"
-              color="primary"
-            />
             </div>
 
             <q-input
@@ -95,20 +88,20 @@ export default {
   data () {
     return {
       form: {
-        judulFilm: null,
+        tiketPesawat: null,
         harga: 0,
-        tahun: null,
-        genre: null,
+        tanggal: null,
+        tujuan: null,
         rating: 0,
         deskripsi: null
       },
-      optionGenre: [
-        'Action',
-        'Adventure',
-        'Comedy',
-        'Drama',
-        'Fantasy',
-        'Romance'
+      optionTujuan: [
+        'Palembang',
+        'Bandar Lampung',
+        'Jakarta',
+        'Bandung',
+        'Bali',
+        'Medan'
       ],
       image: null
     }
@@ -123,7 +116,7 @@ export default {
           if (res.data.sukses) {
             this.form = res.data.data
           } else {
-            this.$router.push({ name: 'dataDVD' })
+            this.$router.push({ name: 'dataTiket' })
           }
         })
     },
@@ -135,7 +128,7 @@ export default {
         .then(res => {
           if (res.data.sukses) {
             this.$showNotif(res.data.pesan, 'positive')
-            this.$router.push({ name: 'dataDVD' })
+            this.$router.push({ name: 'dataTiket' })
           } else {
             this.$showNotif(res.data.pesan, 'negative')
           }

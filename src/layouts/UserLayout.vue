@@ -1,12 +1,12 @@
 <template>
   <q-layout view="lHh lpR lFf">
     <q-toolbar unelevated style="height: 70px;" class="bg-black text-white">
-     <div class="text-h6 q-ml-lg">Movie App</div>
+     <div class="text-h6 q-ml-lg">Aplikasi Penjualan Tiket Pesawat</div>
 
       <q-space />
-     <div v-if="$q.screen.md || $q.screen.md || $.screen.lg || $q.screen.xl">
+     <div v-if="$q.screen.md || $q.screen.md || $q.screen.lg || $q.screen.xl">
       <q-btn size="medium" :to="{ name: 'userPage' }" flat>Home</q-btn>
-      <q-btn size="medium" :to="{ name: 'myOrder' }" flat>Pesanan Saya</q-btn>
+      <q-btn size="medium" :to="{ name: 'MyOrder' }" flat>Pesanan Saya</q-btn>
       <q-btn size="medium" flat>Tentang</q-btn>
       <q-btn size="medium" @click="logout()" flat>Logout</q-btn>
      </div>

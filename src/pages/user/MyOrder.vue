@@ -24,8 +24,8 @@
     >
         <template v-slot:body="props">
           <q-tr :props="props">
-            <q-td key="judulFilm" :props="props">
-              {{ props.row.dataMovie[0].judulFilm }}
+            <q-td key="tiketPesawat" :props="props">
+              {{ props.row.dataPenerbangan[0].tiketPesawat }}
             </q-td>
             <q-td key="harga" :props="props">
               {{ props.row.harga }}
@@ -63,7 +63,7 @@ export default {
   data () {
     return {
       columns: [
-        { name: 'judulFilm', align: 'center', label: 'Judul Film', field: 'judulFilm', sortable: true },
+        { name: 'tiketPesawat', align: 'center', label: 'Tiket Pesawat', field: 'tiketPesawat', sortable: true },
         { name: 'harga', align: 'center', label: 'Harga', field: 'harga', sortable: true },
         { name: 'jumlah', align: 'center', label: 'Jumlah Beli', field: 'jumlah', sortable: true },
         { name: 'total', align: 'center', label: 'Total ', field: 'total', sortable: true },

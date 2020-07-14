@@ -37,7 +37,7 @@
                 <img src="https://cdn.quasar.dev/img/avatar.png">
              </q-avatar>
              <div class="text-weight-bold q-mt-md">{{ $q.localStorage.getItem('dataUser').namaLengkap }}</div>
-             <div>Aplikasi Penjualan DVD Film</div>
+             <div>Aplikasi Penjualan Tiket Pesawat</div>
            </div>
          </q-item>
 
@@ -49,12 +49,12 @@
           <q-item-label>Dashboard</q-item-label>
         </q-item-section>
       </q-item>
-      <q-item clickable active-class="active" v-ripple exact :to="{ name: 'dataDVD' }">
+      <q-item clickable active-class="active" v-ripple exact :to="{ name: 'dataTiket' }">
         <q-item-section avatar>
           <q-icon name="dashboard"/>
         </q-item-section>
         <q-item-section>
-          <q-item-label>Data DVD</q-item-label>
+          <q-item-label>Data Tiket</q-item-label>
         </q-item-section>
       </q-item>
       <q-item clickable active-class="active" :to="{ name: 'inputBarang' }" v-ripple exact>
@@ -62,7 +62,7 @@
           <q-icon name="input"/>
         </q-item-section>
         <q-item-section>
-          <q-item-label>Input DVD</q-item-label>
+          <q-item-label>Input Tiket</q-item-label>
         </q-item-section>
       </q-item>
       <q-item clickable active-class="active" :to="{ name: 'dataUser' }" v-ripple exact>

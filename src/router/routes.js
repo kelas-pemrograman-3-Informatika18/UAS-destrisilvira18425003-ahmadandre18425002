@@ -10,8 +10,8 @@ const routes = [
       { path: '', name: 'dashboardAdmin', component: () => import('pages/admin/Index.vue') },
       { path: 'inputbarang', name: 'inputBarang', component: () => import('pages/admin/InputBarang.vue') },
       { path: 'datauser', name: 'dataUser', component: () => import('pages/admin/DataUser.vue') },
-      { path: 'datadvd', name: 'dataDVD', component: () => import('pages/admin/DataDVD.vue') },
-      { path: 'formedit/:id', name: 'formEditDVD', component: () => import('pages/admin/FormEdit.vue') }
+      { path: 'dataTiket', name: 'dataTiket', component: () => import('pages/admin/DataTiket.vue') },
+      { path: 'formedit', name: 'formEdit', component: () => import('pages/admin/FormEdit.vue') }
     ]
   },
   {
@@ -22,7 +22,7 @@ const routes = [
     },
     children: [
       { path: '', name: 'userPage', component: () => import('pages/user/Index.vue') },
-      { path: '/myorder', name: 'myOrder', component: () => import('pages/user/MyOrder.vue') }
+      { path: '/MyOrder', name: 'MyOrder', component: () => import('pages/user/MyOrder.vue') }
     ]
   },
   {

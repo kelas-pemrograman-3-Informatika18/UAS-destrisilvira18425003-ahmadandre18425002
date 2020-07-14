@@ -3,19 +3,19 @@
       <q-page-container>
         <q-page padding class="row items-center justify-center">
             <div class="full-width row">
-              <div class="col-md-6 offset-md-3 col-xs-12 q-pa-md">
+              <div class="col-md-7 offset-md-4 col-xs-12 q-pa-md">
                   <q-card flat class="text-light-green-8">
                       <div class="row">
-                          <div class="col-md-5">
+                          <div class="col-md-7">
                             <div class="row">
                                 <div class="col-md-10 offset-1">
-                                    <q-img src="../../statics/a.jpg"></q-img>
+                                    <q-img src="../../statics/v.png"></q-img>
                                 </div>
                             </div>
                           </div>
                           <div class="col md-5">
                             <q-card-section>
-                              <div class="text-h5">Welcome to Movie App</div>
+                              <div class="text-h5">Welcome to Aplikasi</div>
                               <div>Login Akun Anda</div>
                             </q-card-section>
                               <q-form @submit="login">

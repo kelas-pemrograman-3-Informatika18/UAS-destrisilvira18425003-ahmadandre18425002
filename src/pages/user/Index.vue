@@ -10,10 +10,10 @@
       infinite
       swipeable
     >
-      <q-carousel-slide :name="1" img-src="https://cdn2.tstatic.net/batam/foto/bank/images/drama-korea-whats-wrong-with-secretary-kim-episode-kedua.jpg" />
-      <q-carousel-slide :name="2" img-src="https://i2.wp.com/www.kordanews.com/wp-content/uploads/2020/02/Itaewon-Class.jpg?fit=860%2C532&ssl=1" />
-      <q-carousel-slide :name="3" img-src="https://4.bp.blogspot.com/-UK64AG5vT-w/WILw1VqCgBI/AAAAAAAAEns/RXivUfG3zwYoDEGI-OOF2dvpu_l0gEuMQCK4B/w250-h170-c/Sinopsis%2BDrama%2BThe%2BShining%2BEun%2BSoo%2B1.PNG" />
-      <q-carousel-slide :name="4" img-src="https://media.suara.com/pictures/970x544/2020/05/20/89834-the-king-eternal-monarch.jpg" />
+      <q-carousel-slide :name="1" img-src="https://statik.tempo.co/data/2020/02/26/id_918449/918449_720.jpg" />
+      <q-carousel-slide :name="2" img-src="https://lh3.googleusercontent.com/proxy/FAJcNRfKIstuSwsDI11R2FPZvcfcuuGs1YH_DwuOaHF2iT3h6m4QaA0Zo39OYkW8wt29Zi_uQGiiu0uIJ5PibkGbN-rmiC3jdNGVN0wjBCeowjuAsGRdfFetloxC564Ixi01OWsFQ8lYPgkYt-cuDaI" />
+      <q-carousel-slide :name="3" img-src="https://m.ayobogor.com/images-bogor/post/articles/2020/01/10/5648/pes.jpg" />
+      <q-carousel-slide :name="4" img-src="https://image.cermati.com/q_70/jbiufxnrlvqmdrlxaynh" />
     </q-carousel>
     </div>
     <div class="row q-col-gutter-md">
@@ -36,7 +36,7 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            {{movie.judulFilm}}
+            {{movie.tiketPesawat}}
           </div>
         </div>
 
@@ -48,7 +48,7 @@
           Rp. {{ movie.harga }},-
         </div>
         <div class="text-subtitle1">
-          {{movie.genre}}
+          {{movie.tujuan}}
         </div>
         <div @click="movie.expanded = !movie.expanded" class="text-caption text-ligh-green ellipsis-3-lines cursor-pointer">
           Tampilkan Deskripsi
@@ -64,7 +64,7 @@
 
       <q-card-actions>
         <q-btn unelevated @click="openDetail(movie)" class="full-width" color="primary">
-          Order Now or Cry Later
+          Order Now
         </q-btn>
       </q-card-actions>
     </q-card>
@@ -76,7 +76,7 @@
           <div class="text-h6">Detail Pemesanan</div>
          </q-card-section>
          <q-card-section style="max-height: 50vh;" class="scrool">
-         {{ activeData.judulFilm }} Rp. {{ activeData.harga }},-
+         {{ activeData.tiketPesawat }} Rp. {{ activeData.harga }},-
          <q-form class="q-mt-md">
           <q-input filled type="number" class="q-mb-md" v-model="jumlah" label="Masukan Jumlah"/>
           Rp. {{ total }},-
@@ -135,7 +135,7 @@ export default {
       formData.append('image', this.image)
       formData.append('data', JSON.stringify({
         idUser: this.$q.localStorage.getItem('dataUser')._id,
-        idFilm: this.activeData._id,
+        idTiket: this.activeData._id,
         harga: this.activeData.harga,
         jumlah: this.jumlah,
         total: this.total

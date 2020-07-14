@@ -1,9 +1,9 @@
 {
   "name": "movieapp",
   "version": "0.0.1",
-  "description": "sebuah aplikasi penjualan dvd",
+  "description": "sebuah aplikasi penjualan Tiket Pesawat",
   "productName": "Quasar App",
-  "author": "yollandha",
+  "author": "destrisilvira",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",

@@ -8,8 +8,8 @@
           </div>
           <div class="col">
             <q-banner inline-actions class="text-light-green">
-              <div class="text-h6">Input DVD</div>
-              <div >Input Data DVD</div>
+              <div class="text-h6">Input Tiket Pesawat</div>
+              <div >Input Data Tiket Pesawat</div>
             </q-banner>
           </div>
         </div>
@@ -24,9 +24,9 @@
             >
             <q-input
                 filled
-                v-model="form.judulFilm"
-                label="Judul Film"
-                :rules="[ val => val && val.length > 0 || 'Masukkan Judul Film']"
+                v-model="form.tiketPesawat"
+                label="Tiket Pesawat"
+                :rules="[ val => val && val.length > 0 || 'Masukkan Tiket Pesawat']"
             />
 
              <q-input
@@ -39,17 +39,17 @@
 
             <q-input
               filled
-              v-model="form.tahun"
-              label="Tahun Film"
-              :rules="[ val => val && val.length > 0 || 'Masukkan Tahun']"
+              v-model="form.tanggalBerangkat"
+              label="Tanggal Berangkat"
+              :rules="[ val => val && val.length > 0 || 'Masukkan Tanggal Berangkat']"
             />
 
             <q-select
               filled
-              v-model="form.genre"
-              :options="optionGenre"
-              label="Pilih Genre"
-              :rules="[ val => val && val.length > 0 || 'Masukkan Genre']"
+              v-model="form.tujuan"
+              :options="optionTujuan"
+              label="Pilih Tujuan"
+              :rules="[ val => val && val.length > 0 || 'Masukkan Tujuan']"
             />
 
             <div class="flex">
@@ -93,20 +93,20 @@ export default {
   data () {
     return {
       form: {
-        judulFilm: null,
+        tiketPesawat: null,
         harga: 0,
-        tahun: null,
-        genre: null,
+        tanggalBerangkat: null,
+        tujuan: null,
         rating: 0,
         deskripsi: null
       },
-      optionGenre: [
-        'Action',
-        'Adventure',
-        'Comedy',
-        'Drama',
-        'Fantasy',
-        'Romance'
+      optionTujuan: [
+        'Palembang',
+        'Bandar Lampung',
+        'Jakarta',
+        'Bandung',
+        'Bali',
+        'Medan'
       ],
       image: null
     }
@@ -118,9 +118,10 @@ export default {
       formData.append('data', JSON.stringify(this.form))
       this.$axios.post('movie/insert', formData)
         .then(res => {
+          console.log(this.formData)
           if (res.data.sukses) {
             this.$showNotif(res.data.pesan, 'positive')
-            this.$router.push({ name: 'dataDVD' })
+            this.$router.push({ name: 'dataTiket' })
           } else {
             this.$showNotif(res.data.pesan, 'negative')
           }
